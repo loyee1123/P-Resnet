@@ -134,7 +134,7 @@ if (__name__ == '__main__'):
     for q in range(0,10,1):
         neg_patch_number = 0
         pos_patch_number = 0
-        filepath_positive='/home/luoyi/PCG/semi_remote/data/10_folder_patientslevel_recordingdata/neg_recording/'+str(q)
+        filepath_positive=''+str(q)
         name_positive= os.listdir(filepath_positive)  # 得到文件夹下的所有文件名称
         #name_positive.sort(key=lambda x: int((x.split('_')[0])))
         heart_sound_list = []
@@ -160,7 +160,7 @@ if (__name__ == '__main__'):
                 name_file = name_positive[i].split('.')[0]
 
                 for j in range(0, num, 1):
-                    heart_sound_save_path = '/home/luoyi/PCG/semi_remote/data/10_folder_patientslevel_recordingdata/neg_segment/'+str(q)+ '/' + 'heart_sound_' + name_file + '_' + str(k) + '_' + str(j) + '.npy'
+                    heart_sound_save_path = '/'+str(q)+ '/' + 'heart_sound_' + name_file + '_' + str(k) + '_' + str(j) + '.npy'
                     heart_sound = Frame[j, :]
                     heart_sound = heart_sound.reshape(1, -1)
                     heart_sound_list.append(heart_sound)
@@ -172,8 +172,8 @@ if (__name__ == '__main__'):
                         #lable_list.append(lable)
                         #lable_path_list.append(lable_save_path)
 
-            heart_sound_save_name_train = '/home/luoyi/PCG/semi_remote/data/10_folder_patientslevel_recordingdata/neg_segment/'+str(q) + '/' + 'neg_heart_sound_path_.csv'
-            #lable_save_name_train = '/home/luoyi/PCG/data_2022/murmur/diff_phase/all/' + str(m) + '_label_path.csv'
+            heart_sound_save_name_train = ''+str(q) + '/' + 'neg_heart_sound_path_.csv'
+            #lable_save_name_train = '' + str(m) + '_label_path.csv'
 
             heart_sound_path_csv_train = open(heart_sound_save_name_train, 'w')
             for index in range(len(heart_sound_path_list)):
