@@ -1,3 +1,4 @@
+#split the dataset in patient level
 import random
 import os
 import shutil
