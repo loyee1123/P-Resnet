@@ -1,4 +1,4 @@
-
+#preprocess the PCG signals into standardized slices 
 import numpy as np
 import wave
 import matplotlib.pyplot as plt
